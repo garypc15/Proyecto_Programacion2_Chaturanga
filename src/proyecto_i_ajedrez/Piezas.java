@@ -11,7 +11,7 @@ package proyecto_i_ajedrez;
 import java.util.Scanner;
 public class Piezas extends Tablero{
        
-       public int IniFil,IniCol;
+       public static int IniFil,IniCol;
        
        public Piezas(int iniF,int iniC){
            super();

@@ -5,9 +5,12 @@ import java.util.Scanner;
 public class Proyecto_I_Ajedrez {
     public static void main(String[] args) {
         
+        
         Scanner lea=new Scanner(System.in);
         String jugadores1[] = new String[10];
         String jugadores2[] = new String[10];
+        
+                
         int actual=0;
         boolean accionin=false;
         int ops = 0;
@@ -20,7 +23,8 @@ public class Proyecto_I_Ajedrez {
             
             System.out.print("Ingrese una opcion: ");
             ops = lea.nextInt();
-            
+                        
+                      
             switch(ops)
             {
                 case 1:
@@ -30,10 +34,11 @@ public class Proyecto_I_Ajedrez {
                     jugadores1[actual] = lea.next();
                     System.out.print("Ingrese el nombre del Jugador 2: ");
                     jugadores2[actual] = lea.next();
-                    
-                    int turno = 1; // 1: Jugador 1 y 2: jugador 2
-                    Tablero tab = new Tablero();  
-                
+         Tablero tab = new Tablero();  
+                    tab.generarTab();           
+        tab.posIni();           
+                    tab.tabprint();
+                   int turno = 1; // 1: Jugador 1 y 2: jugador 2
                     
                     while(!tab.juegoTerminado)
                     {
@@ -47,14 +52,15 @@ public class Proyecto_I_Ajedrez {
                         int fil = lea.nextInt();
                         System.out.print("Ingrese la columna de la pieza: ");
                         int col = lea.nextInt();
+                        
+                      String pieza = tab.tablero[fil][col].toString();
+            
                         accionin=false;
                 
-                        
-                        String pieza = tab.tablero[fil][col].toString();
 
                         
                         if(pieza.startsWith("P"))
-                        {
+                            {
                             // Es Peon
                             
                             if(pieza.equals("PV ")&&turno==2){
@@ -71,7 +77,19 @@ public class Proyecto_I_Ajedrez {
                         }
                         else if(pieza.startsWith("T"))
                         {
+                         
                             // Es Torre
+                                if(pieza.equals("TV ")&&turno==2){
+                                Piezas torre = new Torre(fil,col,turno);
+                                torre.movimiento();
+                                accionin=true;
+                            }else if(pieza.equals("TR ")&&turno==1){
+                                Piezas torre = new Torre(fil,col,turno);
+                                torre.movimiento();
+                                accionin=true;
+                            }else
+                                System.out.println("Accion Invalida");
+                                accionin=false;
                         }
                         else if(pieza.startsWith("E"))
                         {

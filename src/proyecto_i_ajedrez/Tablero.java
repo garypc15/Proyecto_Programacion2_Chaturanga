@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class Tablero {
 
-public  static Object tablero[][]=new Object [8][8];
-protected  static int tabi[][]=new int[8][8];
+public  static final Object tablero[][]=new Object [8][8];
+protected static final int tabi[][]=new int[8][8];
 protected String ElefanteV="EV ";
 protected String ElefanteR="ER ";
-protected static String PeonV="PV ";
-protected static String PeonR="PR ";
+protected  String PeonV="PV ";
+protected String PeonR="PR ";
 protected String CaballoV="CV ";
 protected String CaballoR="CR ";
 protected String VisirV="VV ";
@@ -27,8 +27,24 @@ Scanner lea=new Scanner(System.in);
      this.generarTab();
      this.tabprint();
  }
+ 
  public void generarTab(){
-    tabi[0][0]=2;
+    
+     
+     for(int x=0;x<8;x++){
+         for(int y=0;y<8;y++){
+             if(tablero[x][y]==null){
+                 tablero[x][y]="-- ";
+            if(tablero[x][y].equals("-- ")){
+                tabi[x][y]=0;
+                                                 }
+                             }
+                    }
+            }
+     
+ }
+ public void posIni(){
+      tabi[0][0]=2;
     tabi[0][1]=2;
     tabi[0][2]=2;
     tabi[0][3]=2;
@@ -96,18 +112,6 @@ Scanner lea=new Scanner(System.in);
      tablero[6][5]=PeonR  ;
      tablero[6][6]=PeonR  ;
      tablero[6][7]= PeonR ;
-     
-     for(int x=0;x<8;x++){
-         for(int y=0;y<8;y++){
-             if(tablero[x][y]==null){
-                 tablero[x][y]="-- ";
-            if(tablero[x][y]=="-- "){
-                tabi[x][y]=0;
-            }
-             }
-         }
-     }
-     
  }
  
     public void tabprint(){

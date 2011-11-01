@@ -43,7 +43,7 @@ int Desfil,Descol,player;
                         tabi[Desfil][Descol]=1;
                         tabi[IniFil][IniCol]=0;
                         tablero[IniFil][IniCol]="-- ";
-                    }else if(tablero[Desfil][Descol]==1){
+                    }else if(tabi[Desfil][Descol]==1){
                         System.out.println("Moviento No valido");
                     }
                     
@@ -61,7 +61,7 @@ int Desfil,Descol,player;
                         tabi[IniFil][IniCol]=0;
                         tablero[IniFil][IniCol]="-- ";
                         
-                    }else if(tablero[Desfil][Descol]==2){
+                    }else if(tabi[Desfil][Descol]==2){
                         System.out.println("Moviento No valido");
                     }
                }
@@ -81,7 +81,7 @@ int Desfil,Descol,player;
                         tabi[Desfil][Descol]=1;
                         tabi[IniFil][IniCol]=0;
                         tablero[IniFil][IniCol]="-- ";
-                    }else if(tablero[Desfil][Descol]==1){
+                    }else if(tabi[Desfil][Descol]==1){
                         System.out.println("Moviento No valido");
                     }
                     
@@ -99,7 +99,7 @@ int Desfil,Descol,player;
                         tabi[IniFil][IniCol]=0;
                         tablero[IniFil][IniCol]="-- ";
                         
-                    }else if(tablero[Desfil][Descol]==2){
+                    }else if(tabi[Desfil][Descol]==2){
                         System.out.println("Moviento No valido");
                     }
                }  
@@ -118,7 +118,7 @@ if(player==1){
                         tabi[Desfil][Descol]=1;
                         tabi[IniFil][IniCol]=0;
                         tablero[IniFil][IniCol]="-- ";
-                    }else if(tablero[Desfil][Descol]==1){
+                    }else if(tabi[Desfil][Descol]==1){
                         System.out.println("Moviento No valido");
                     }
                     
@@ -136,7 +136,7 @@ if(player==1){
                         tabi[IniFil][IniCol]=0;
                         tablero[IniFil][IniCol]="-- ";
                         
-                    }else if(tablero[Desfil][Descol]==2){
+                    }else if(tabi[Desfil][Descol]==2){
                         System.out.println("Moviento No valido");
                     }
                }

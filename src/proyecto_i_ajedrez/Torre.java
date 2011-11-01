@@ -10,11 +10,13 @@ package proyecto_i_ajedrez;
  */
 public class Torre extends Piezas{
     
-    public Torre(int iniF,int iniC)
-    {
-        super(iniF,iniC);
+     int Desfil,Descol,player;
+    public Torre(int iniF,int iniC,int jugador){
+ 
+        super(iniF,iniC);        
+        player=jugador;
     }
-    
+   
     @Override
     public void movimiento(){
         System.out.println("ingrese coordenadas");
