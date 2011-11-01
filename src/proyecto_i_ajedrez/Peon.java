@@ -32,6 +32,7 @@ public class Peon extends Piezas {
 
                         if(tabi[Desfil][Descol]==0){
                             if(player==1){
+                               
                             tablero[Desfil][Descol]=PeonR;
                             tablero[IniFil][IniCol]="-- ";
                             tabi[Desfil][Descol]=1;
@@ -55,9 +56,10 @@ public class Peon extends Piezas {
  }else if((player==1&&(Desfil==IniFil-1)&&((Descol==IniCol-1)||(Descol==IniCol+1)))||(player==2&&(Desfil==IniFil+1)&&((Descol==IniCol+1)))){
             
                      if(player==1){
-                                  
+                                   
                          if(tabi[Desfil][Descol]==2){
-                                      tabi[IniFil][IniCol]=0;
+                             System.out.println("Peon Rojo se comio a "+tablero[Desfil][Descol]);   
+                             tabi[IniFil][IniCol]=0;
                                       tabi[Desfil][Descol]=1;
                                       tablero[Desfil][Descol]=PeonR;
                             super.tabprint();
@@ -68,7 +70,7 @@ public class Peon extends Piezas {
                          }
 
                      }else if(player==2){
-                      
+                       System.out.println("Peon Verde se comio a "+tablero[Desfil][Descol]);
                          if(tabi[Desfil][Descol]==1){
                                       tabi[IniFil][IniCol]=0;
                                       tabi[Desfil][Descol]=2;

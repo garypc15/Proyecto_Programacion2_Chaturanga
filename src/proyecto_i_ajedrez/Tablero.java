@@ -24,8 +24,7 @@ boolean juegoTerminado = false;
 Scanner lea=new Scanner(System.in);
 
  public Tablero(){
-     this.generarTab();
-     this.tabprint();
+
  }
  
  public void generarTab(){
