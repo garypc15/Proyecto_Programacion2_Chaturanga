@@ -94,6 +94,15 @@ public class Proyecto_I_Ajedrez {
                         else if(pieza.startsWith("E"))
                         {
                             // Es Elefante
+                                if(pieza.equals("EV ")&&turno==2){
+                                    Piezas ele=new Elefante(fil,col,turno);
+                                    ele.movimiento();
+                                    accionin=true;
+                                }else if(pieza.equals("ER ")&&turno==1){
+                                    Piezas ele=new Elefante(fil,col,turno);
+                                    ele.movimiento();
+                                    accionin=true;
+                                }
                         }
                         else if(pieza.startsWith("C"))
                         {
@@ -114,10 +123,23 @@ public class Proyecto_I_Ajedrez {
                         else if(pieza.startsWith("V"))
                         {
                             // Es Visir
+                            if(pieza.equals("VV ")&&turno==2){
+                                Piezas visi=new Visir(fil,col,turno);
+                                visi.movimiento();
+                                accionin=true;
+                            }else if(pieza.equals("VR")&&turno==1){
+                                Piezas visi=new Visir(fil,col,turno);
+                                visi.movimiento();
+                                accionin=true;
+                            }
                         }
                         else if(pieza.startsWith("R"))
                         {
                             // Es Rey
+                        if(pieza.equals("RV ")&&turno==2){
+                            Piezas rey=new Rey(fil,col,turno);
+                            
+                        }
                         }
                         else
                         {
