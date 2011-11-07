@@ -125,7 +125,26 @@ public class Visir extends Piezas{
     {
         if( turno == 1) // JU 1
         {
-               if(Descol<0||Descol>7&&Desfil<0&&Desfil>7){
+             if(Descol==7){
+             
+                  if( (tabi[Desfil-1][Descol+1]==2 && tablero[Desfil-1][Descol+1].equals("RV ")) ||
+               
+                    (tabi[Desfil+1][Descol+1]==2 && tablero[Desfil+1][Descol+1].equals("RV "))
+               )
+            {
+                 System.out.println("jaque");
+
+                 
+            }
+             }else if(Descol==0){
+                  if( (tabi[Desfil-1][Descol-1]==2 && tablero[Desfil-1][Descol-1].equals("RV ") ) ||
+                    (tabi[Desfil+1][Descol-1]==2 && tablero[Desfil+1][Descol-1].equals("RV ") ) )
+            {
+                System.out.println("jaque");
+            }
+             }else{
+                 
+                 
             if( (tabi[Desfil-1][Descol+1]==2 && tablero[Desfil-1][Descol+1].equals("RV ")) ||
                 (tabi[Desfil-1][Descol-1]==2 && tablero[Desfil-1][Descol-1].equals("RV ") ) ||
                     (tabi[Desfil+1][Descol+1]==2 && tablero[Desfil+1][Descol+1].equals("RV "))||
@@ -139,17 +158,39 @@ public class Visir extends Piezas{
         }
         else if(turno == 2)
         {
-          if(Descol<0||Descol>7&&Desfil<0&&Desfil>7){
-            if( (tabi[Desfil+1][Descol+1]==1 && tablero[Desfil+1][Descol+1].equals("RR ")) ||
-                (tabi[Desfil+1][Descol-1]==1 && tablero[Desfil+1][Descol-1].equals("RR ") )||
-                (tabi[Desfil-1][Descol+1]==1 && tablero[Desfil-1][Descol+1].equals("RR ")) ||
-                (tabi[Desfil-1][Descol-1]==1 && tablero[Desfil-1][Descol-1].equals("RR ") )) 
-                    
+            if(Descol==7){
+             
+                  if( (tabi[Desfil-1][Descol+1]==2 && tablero[Desfil-1][Descol+1].equals("RR ")) ||
+               
+                    (tabi[Desfil+1][Descol+1]==2 && tablero[Desfil+1][Descol+1].equals("RR "))
+               )
             {
-                System.out.println("Jugador 1 esta en JAQUE");
-                     jaque =true;
+                 System.out.println("jaque");
+
             }
-        }
+             }else if(Descol==0){
+                  if( (tabi[Desfil-1][Descol-1]==2 && tablero[Desfil-1][Descol-1].equals("RR ") ) ||
+                    (tabi[Desfil+1][Descol-1]==2 && tablero[Desfil+1][Descol-1].equals("RR ") ) )
+            {
+                System.out.println("jaque");
+            }
+             }else{
+                 
+                 
+            if( (tabi[Desfil-1][Descol+1]==2 && tablero[Desfil-1][Descol+1].equals("RR ")) ||
+                (tabi[Desfil-1][Descol-1]==2 && tablero[Desfil-1][Descol-1].equals("RR ") ) ||
+                    (tabi[Desfil+1][Descol+1]==2 && tablero[Desfil+1][Descol+1].equals("RR "))||
+                   (tabi[Desfil+1][Descol-1]==2 && tablero[Desfil+1][Descol-1].equals("RR ") ) )
+            {
+                System.out.println("Jugador  esta en JAQUE");
+                
+                 jaque=true;
+            }
+               }
+            
+            
+            
+            
         }
     }
 

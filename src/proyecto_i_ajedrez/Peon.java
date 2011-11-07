@@ -151,41 +151,52 @@ public class Peon extends Piezas {
     {
         if( turno == 1) // JU 1
         {
-               if(Descol==0){
-                   Descol+=1;
-               }
-                  if( Descol==7){
-                      Descol-=1;
-                      if(Desfil==7){
-                          Desfil-=1;
-                      }
-                       if(Desfil==0){
-                           Desfil+=1;
-                       }
+        
                    
-            if( (tabi[Desfil-1][Descol+1]==2 && tablero[Desfil-1][Descol+1].equals("RV ")) ||
-                (tabi[Desfil-1][Descol-1]==2 && tablero[Desfil-1][Descol-1].equals("RV ") )  )
+             if(Descol==7){
+                
+                    if((tabi[Desfil-1][Descol-1]==2 && tablero[Desfil-1][Descol-1].equals("RV ") )  )
             {
                 System.out.println("Jugador 2 esta en JAQUE");
                 
             }
-            
+             }     else  if(Descol==0){
+                       if((tabi[Desfil-1][Descol+1]==2 && tablero[Desfil-1][Descol+1].equals("RV "))){
+                           System.out.println("JAQUE");
+                       }
+                    }else{
+                        if((tabi[Desfil-1][Descol-1]==2 && tablero[Desfil-1][Descol-1].equals("RV ") )||
+                                (tabi[Desfil-1][Descol+1]==2 && tablero[Desfil-1][Descol+1].equals("RV "))){
+                                
+                            System.out.println("JAQUE");
+                        }
                }
         }
+        
         else if(turno == 2)
         {
-          if(Descol<0||Descol>7&&Desfil<0&&Desfil>7){
-            if( (tabi[Desfil+1][Descol+1]==2 && tablero[Desfil+1][Descol+1].equals("RR ")) ||
-                (tabi[Desfil+1][Descol-1]==2 && tablero[Desfil+1][Descol-1].equals("RR ") )  )
+          if(Descol==7){
+            if (tabi[Desfil+1][Descol-1]==2 && tablero[Desfil+1][Descol-1].equals("RR ")) 
             {
-                System.out.println("Jugador 1 esta en JAQUE");
-                
-            }
+                System.out.println("jaque");
+            }     
+          }else if (Descol==0){
+             if (tabi[Desfil+1][Descol+1]==2 && tablero[Desfil+1][Descol+1].equals("RR ") )  {
+              System.out.println("jaque");
+          }
+          }else{ 
+              if ((tabi[Desfil+1][Descol+1]==2 && tablero[Desfil+1][Descol+1].equals("RR "))||
+                      (tabi[Desfil+1][Descol-1]==2 && tablero[Desfil+1][Descol-1].equals("RR ")))
+            {
+                System.out.println("jaque");
+              
+            
         }
         }
     }
     
     }
+}
         
 
     

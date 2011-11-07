@@ -130,21 +130,35 @@ Scanner lea=new Scanner(System.in);
         
     }
  */
-    public void tabprint(){
-    
-        System.out.println("Marcador--> Jugador 1: "+capt1+" Jugador 2: "+capt2);
-        System.out.println("-------------------------------------------");
-        System.out.println(" ");
-        
-        System.out.println("  0   1    2   3   4   5   6  7 ");
-        for(int fil = 0;fil<tablero.length;fil++){
-            System.out.print(fil+" ");
-            
-            for(int col=0;col<tablero.length;col++){
-                System.out.print(tablero[fil][col]+" ");
-            }
-            
-            System.out.println("");                
-        }
-    }
+     public void tabprint(){
+
+ System.out.println("Marcador--> Jugador 1: "+capt1+" Jugador 2: "+capt2);
+ System.out.println("-------------------------------------------");
+ System.out.println(" ");
+
+ System.out.println("   0   1   2   3   4   5   6   7 ");
+imp(0,0,7,7);
+ }
+
+ private void imp(int i,int j,int mi, int mj)
+ {
+ if( i==mi && j==mj)
+ {
+ System.out.print(tablero[mi][mj] + "\n");
+ return;
+ }
+ else if(j<=mj)
+ {
+ if(j==0)
+ System.out.print(i + " ");
+ System.out.print(tablero[i][j] + " ");
+ imp(i,j+1,mi,mj);
+ }
+ else
+ {
+ System.out.println("");
+ imp(i+1,0,mi,mj);
+ }
+ }
+
 }
