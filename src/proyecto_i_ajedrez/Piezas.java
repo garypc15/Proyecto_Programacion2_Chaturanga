@@ -13,8 +13,9 @@ public class Piezas extends Tablero{
        
        public static int IniFil,IniCol;
  
-
-       
+  boolean jaque=false;
+  boolean jaque2=false;
+         
        public Piezas(int iniF,int iniC){
            super();
            this.IniCol = iniC;

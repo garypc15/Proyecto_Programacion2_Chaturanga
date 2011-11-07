@@ -271,4 +271,34 @@ int Desfil,Descol,player;
 return false;
     
      }
+    
+    
+       @Override
+    public void verJaque(int turno)
+    {
+        if( turno == 1) // JU 1
+        {
+               if(Descol<0||Descol>7&&Desfil<0&&Desfil>7){
+                       if((tablero[Desfil+2][Descol-1].equals("RV "))||(tablero[Desfil+2][Descol+1].equals("RV "))||
+                             (tablero[Desfil-2][Descol-1].equals("RV "))||(tablero[Desfil-2][Descol+1].equals("RV "))||
+                            (tablero[Desfil+1][Descol+2].equals("RV "))||(tablero[Desfil+1][Descol-2].equals("RV ")) ) 
+                       {
+                            System.out.println("JAQUE!!");
+                             jaque2=true;
+                       }
+               }
+        }else if(turno == 2){
+               if(Descol<0||Descol>7&&Desfil<0&&Desfil>7){
+                       if((tablero[Desfil+2][Descol-1].equals("RR "))||(tablero[Desfil+2][Descol+1].equals("RR "))||
+                             (tablero[Desfil-2][Descol-1].equals("RR "))||(tablero[Desfil-2][Descol+1].equals("RR "))||
+                            (tablero[Desfil+1][Descol+2].equals("RR "))||(tablero[Desfil+1][Descol-2].equals("RR ")) ) 
+                       {
+                            System.out.println("JAQUE!!");
+                                 jaque=true;
+                       }
+               }
+        }
+                   
+                   
+               }
 }

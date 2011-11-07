@@ -120,5 +120,39 @@ public class Visir extends Piezas{
         }
     
     
+  @Override
+    public void verJaque(int turno)
+    {
+        if( turno == 1) // JU 1
+        {
+               if(Descol<0||Descol>7&&Desfil<0&&Desfil>7){
+            if( (tabi[Desfil-1][Descol+1]==2 && tablero[Desfil-1][Descol+1].equals("RV ")) ||
+                (tabi[Desfil-1][Descol-1]==2 && tablero[Desfil-1][Descol-1].equals("RV ") ) ||
+                    (tabi[Desfil+1][Descol+1]==2 && tablero[Desfil+1][Descol+1].equals("RV "))||
+                   (tabi[Desfil+1][Descol-1]==2 && tablero[Desfil+1][Descol-1].equals("RV ") ) )
+            {
+                System.out.println("Jugador 2 esta en JAQUE");
+                
+                 jaque2=true;
+            }
+               }
+        }
+        else if(turno == 2)
+        {
+          if(Descol<0||Descol>7&&Desfil<0&&Desfil>7){
+            if( (tabi[Desfil+1][Descol+1]==1 && tablero[Desfil+1][Descol+1].equals("RR ")) ||
+                (tabi[Desfil+1][Descol-1]==1 && tablero[Desfil+1][Descol-1].equals("RR ") )||
+                (tabi[Desfil-1][Descol+1]==1 && tablero[Desfil-1][Descol+1].equals("RR ")) ||
+                (tabi[Desfil-1][Descol-1]==1 && tablero[Desfil-1][Descol-1].equals("RR ") )) 
+                    
+            {
+                System.out.println("Jugador 1 esta en JAQUE");
+                     jaque =true;
+            }
+        }
+        }
     }
+
+
+}
 

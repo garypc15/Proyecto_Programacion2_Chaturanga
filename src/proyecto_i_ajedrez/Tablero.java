@@ -116,7 +116,20 @@ Scanner lea=new Scanner(System.in);
      tablero[6][6]=PeonR  ;
      tablero[6][7]= PeonR ;
  }
- 
+/* 
+    public void tabprint(int i, int j,int LimI, int LimJ)
+    {
+        if(j>=LimJ && i>=LimI)
+        {
+            return;
+        }
+        else if(j<LimJ)
+        {
+            System.out.println("");
+        }
+        
+    }
+ */
     public void tabprint(){
     
         System.out.println("Marcador--> Jugador 1: "+capt1+" Jugador 2: "+capt2);

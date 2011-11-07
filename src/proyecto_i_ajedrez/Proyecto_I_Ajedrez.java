@@ -6,13 +6,19 @@ public class Proyecto_I_Ajedrez {
     
     static String stat[] = new String[10];
     
-    public static void fixEstadisticas(String msg)
+    public static void fixEstadisticas(String msg,int i)
     {
-        for(int i=8; i>=0; i--)
+        if(i<0)
+        {
+            stat[0] = msg;
+            return;
+        }
+        else
         {
             stat[i+1] = stat[i];
+            fixEstadisticas(msg,i-1);
         }
-        stat[0] = msg;
+        
     }
     
     public static void main(String[] args) {
@@ -134,6 +140,7 @@ public class Proyecto_I_Ajedrez {
                                     if(peon.movimiento())
                                     {
                                         peon.verJaque(turno);
+
                                         accionin=true;
                                     }
                                     else
@@ -155,7 +162,8 @@ public class Proyecto_I_Ajedrez {
                                     Piezas torre = new Torre(fil,col,turno);
                                     if( torre.movimiento())
                                     {
-                                            accionin=true;
+                                        torre.verJaque(turno);                                            
+                                        accionin=true;
                                     }
                                     else
                                     {
@@ -165,6 +173,7 @@ public class Proyecto_I_Ajedrez {
                                     Piezas torre = new Torre(fil,col,turno);
                                    if (torre.movimiento())
                                    {
+                                       torre.verJaque(turno);
                                     accionin=true;
                                    }
                                    else{
@@ -184,6 +193,7 @@ public class Proyecto_I_Ajedrez {
                                         Piezas ele=new Elefante(fil,col,turno);
                                         if(ele.movimiento())
                                         {
+                                            ele.verJaque(turno);
                                         accionin=true;
                                         }
                                         else
@@ -194,7 +204,7 @@ public class Proyecto_I_Ajedrez {
                                         Piezas ele=new Elefante(fil,col,turno);
                                         if(ele.movimiento())
                                         {
-                                                                                
+                                            ele.verJaque(turno);                                    
                                         accionin=true;
                                         }
                                         else
@@ -213,6 +223,7 @@ public class Proyecto_I_Ajedrez {
                                     Piezas cab=new Caballo(fil,col,turno);
                                    if(cab.movimiento())
                                    {
+                                       cab.verJaque(turno);
                                     accionin=true;
                                    }
                                    else
@@ -224,6 +235,7 @@ public class Proyecto_I_Ajedrez {
                                     Piezas cab=new Caballo(fil,col,turno);
                                     if(cab.movimiento())
                                     {
+                                        cab.verJaque(turno);
                                     accionin=true;
                                     }
                                     else
@@ -243,6 +255,7 @@ public class Proyecto_I_Ajedrez {
                                     Piezas visi=new Visir(fil,col,turno);
                                     if(visi.movimiento())
                                     {
+                                        visi.verJaque(turno);
                                     accionin=true;
                                     }
                                         else
@@ -254,6 +267,7 @@ public class Proyecto_I_Ajedrez {
                                     Piezas visi=new Visir(fil,col,turno);
                                     if(visi.movimiento())
                                     {
+                                        visi.verJaque(turno);
                                     accionin=true;
                                     }
                                     else
@@ -274,6 +288,7 @@ public class Proyecto_I_Ajedrez {
                                     Piezas rey=new Rey(fil,col,turno);
                                  if   (rey.movimiento())
                                  {
+                                     rey.verJaque(turno);
                                     accionin=true;
                                  }
                                  else
@@ -287,6 +302,7 @@ public class Proyecto_I_Ajedrez {
                                     Piezas rey=new Rey(fil,col,turno);
                                  if(   rey.movimiento())
                                  {
+                                     rey.verJaque(turno);
                                     accionin=true;
                                  }
                                  else
@@ -341,22 +357,22 @@ public class Proyecto_I_Ajedrez {
                     if(tab.playerGanador==1)// GANO EL 1
                     {
                         fixEstadisticas( jugadores1[actual] + " le gano a " + jugadores2[actual] + 
-                                       " Comiendose al rey y " + tab.capt1 + " piezas mas");
+                                       " Comiendose al rey y " + tab.capt1 + " piezas mas",8);
                     }
                     else if(tab.playerGanador==2)
                     {
                         fixEstadisticas (jugadores2[actual] + "le gano a " +jugadores1[actual]+
-                                    "Comiendose al Rey y " +tab.capt2 +"piezas mas");
+                                    "Comiendose al Rey y " +tab.capt2 +"piezas mas",8);
                     }
                     else if(tab.playerGanador == 3)
                     {
                         fixEstadisticas(jugadores2[actual] + " se retiro del juego dejando como ganador a "+
-                                jugadores1[actual]);
+                                jugadores1[actual],8);
                     }
                     else if(tab.playerGanador == 4)
                     {
                         fixEstadisticas  (jugadores1[actual] + " se retiro del jeugo dejando como ganagdor a "+
-                                jugadores2[actual]);
+                                jugadores2[actual],8);
                     }
                     
                     
