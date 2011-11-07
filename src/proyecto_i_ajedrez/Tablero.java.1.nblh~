@@ -20,7 +20,7 @@ protected String TorreV="TV ";
 protected String TorreR="TR ";
 
  boolean juegoTerminado = false;
- int playerGanador=0;
+ boolean PlayerGanador;
  boolean moviV=false;
  
 Scanner lea=new Scanner(System.in);
@@ -28,7 +28,7 @@ Scanner lea=new Scanner(System.in);
       public static int capt1=0,capt2=0;
 
  public Tablero(){
-     this.juegoTerminado = false;
+
  }
  
  public void generarTab(){
